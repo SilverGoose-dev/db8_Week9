@@ -1,0 +1,18 @@
+﻿@model Department;
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Department Detail</h1>
+
+Department Code: @Model.ID<br />
+Full Name: @Model.Name<br />
+Location: @Model.Location<br />
+
+<h2>Employees in @Model.Name</h2>
+@foreach (Employee emp in (List<Employee>)ViewData["employees"])
+    {<div>
+        @emp.firstname
+        @emp.lastname
+    </div>
+    }

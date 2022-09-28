@@ -1,0 +1,15 @@
+﻿@model List<product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Kroger</h1>
+
+    @foreach (product prod in Model)
+    {
+        <div>@prod.name @prod.price</div>
+    }
+</div>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Department>
+@{
+    ViewData["Title"] = "Index";
+    //  ? is the start of key value pair
+}
+
+<h1>Index</h1>
+
+ <table>
+     <thead>
+         <tr>
+             <th>Department</th>
+             <th>Actions</th>
+         </tr>
+     </thead>
+     <tbody>
+         @foreach (Department dep in Model)
+        {
+            <tr>
+                <td><a href="/Department/Detail?id=@dep.ID">@dep.Name</a></td>
+                <td><a href="/department/detail?id=@dep.ID">Detail</a></td> 
+                <td><a href="/department/delete?id=@dep.ID">Delete</a></td>
+                <td><a href="">Edit</a></td>
+            </tr>
+            
+        }
+    </tbody>
+ </table>
+
+ <a href="/department/addform">Add New Department</a>
+ 
